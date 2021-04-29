@@ -1,12 +1,12 @@
 package com.demo.springboot.model;
 
 public class Employee {
-    private String id;
+    private int id;
     private String name;
     private String contact;
     private String address;
 
-    public Employee(String id, String name, String contact, String address) {
+    public Employee(int id, String name, String contact, String address) {
         this.id = id;
         this.name = name;
         this.contact = contact;
@@ -16,11 +16,11 @@ public class Employee {
     public Employee() {
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
