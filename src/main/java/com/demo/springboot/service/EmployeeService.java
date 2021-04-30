@@ -27,4 +27,18 @@ public class EmployeeService {
         empList.add(emp);
         return emp;
     }
+
+    public Employee updateEmployee(Employee emp, int id) {
+        Employee e = empList.stream().filter(x -> x.getId() == id).findFirst().get();
+        if (emp.getName() != null) e.setName(emp.getName());
+        if (emp.getAddress() != null) e.setAddress(emp.getAddress());
+        if (emp.getContact() != null) e.setContact(emp.getContact());
+        // can also iterate using for-loop on the list & replace the matching object completely using list.set(int i, Object o)
+        return e;
+    }
+
+    public void deleteEmployee(int id) {
+        //empList.stream().filter(x -> x.getId() == id).findFirst().ifPresent(x -> empList.remove(x));
+        empList.removeIf(x -> x.getId() == id);
+    }
 }
